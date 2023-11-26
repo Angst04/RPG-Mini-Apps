@@ -34,6 +34,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
 h1 {
-   color: var(--tg-theme-text-color);
+   /* color: var(--tg-theme-text-color); */
    font-size: 400px;
+   color: wheat;
 }

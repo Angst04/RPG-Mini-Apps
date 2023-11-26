@@ -9,16 +9,15 @@ MainButton.show();
 BackButton.show();
 
 MainButton.onClick(function() {
-   WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
+  WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
 });
 WebApp.onEvent('mainButtonClicked', function() {
   /* also */
 });
 
 BackButton.onClick(function() {
-   WebApp.showAlert("Нет пути назад!");
-   
-   BackButton.hide();
+  WebApp.showAlert("Нет пути назад!");
+  BackButton.hide();
 });
 WebApp.onEvent('backButtonClicked', function() {
   /* also */

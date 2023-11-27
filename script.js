@@ -1,24 +1,9 @@
-var WebApp = window.Telegram.WebApp;
+let tg = window.Telegram.WebApp;
 
-WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+tg.expand();
 
-var MainButton = WebApp.MainButton;
-var BackButton = WebApp.BackButton;
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#2cab37";
+tg.showAler("Привет!");
 
-MainButton.show();
-BackButton.show();
-
-MainButton.onClick(function() {
-  WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
-});
-WebApp.onEvent('mainButtonClicked', function() {
-  /* also */
-});
-
-BackButton.onClick(function() {
-  WebApp.showAlert("Нет пути назад!");
-  BackButton.hide();
-});
-WebApp.onEvent('backButtonClicked', function() {
-  /* also */
-});
+let item = "";

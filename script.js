@@ -25,4 +25,5 @@ button2.addEventListener('click', () => {
 
 tg.WebApp.onEvent("mainButtonClicked", function(){
    tg.sendData(item);
+   tg.close();
 });

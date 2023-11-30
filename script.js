@@ -1,11 +1,11 @@
 let tg = window.Telegram.WebApp;
 
-tg.MainButton.show()
+tg.MainButton.show();
 tg.MainButton.text = "Сохранить"; 
 
 tg.expand();
 
-tg.ready()
+tg.ready();
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab";

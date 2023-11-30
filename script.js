@@ -5,6 +5,8 @@ tg.MainButton.text = "Сохранить";
 
 tg.expand();
 
+tg.ready()
+
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab";
 

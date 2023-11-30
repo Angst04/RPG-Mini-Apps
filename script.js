@@ -4,7 +4,7 @@ tg.MainButton.show();
 tg.MainButton.text = "Сохранить"; 
 
 tg.expand();
-console.log(tg.version());
+console.log(tg.version);
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab";

@@ -1,36 +1,48 @@
-let tg = window.Telegram.WebApp;
+let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
-tg.MainButton.show();
-tg.MainButton.text = "Сохранить"; 
+tg.expand(); //расширяем на все окно  
 
-tg.expand();
-console.log(tg.version);
+tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
+tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
 
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab";
-
-let item = "3";
-
-tg.ready();
-
-const button1 = document.getElementById('button1');
-const button2 = document.getElementById('button2');
-
-button1.addEventListener('click', () => {
-   tg.showConfirm("Вы нажали кнопку 1");
-   item = "1";
-   tg.sendData(item);
-   tg.close();
+btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	if (tg.MainButton.isVisible){ //если кнопка показана 
+		tg.MainButton.hide() //скрываем кнопку 
+	}
+  else{ //иначе
+  	tg.MainButton.show() //показываем 
+}
 });
 
-button2.addEventListener('click', () => {
-   tg.showAler("Вы нажали кнопку 2");
-   item = "2";
-   tg.sendData(item);
-   tg.close();
+let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
+btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	if (tg.MainButton.isActive){ //если кнопка показана 
+		tg.MainButton.setParams({"color": "#E0FFFF"}); //меняем цвет
+		tg.MainButton.disable() //скрываем кнопку 
+	}
+	else{ //иначе
+		tg.MainButton.setParams({"color": "#143F6B"}); //меняем цвет
+		tg.MainButton.enable() //показываем 
+	}
 });
 
-tg.WebApp.onEvent("mainButtonClicked", function(){
-   tg.sendData(item);
-   tg.close();
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData("some string that we need to send"); 
+	//при клике на основную кнопку отправляем данные в строковом виде
 });
+
+let usercard = document.getElementById("usercard"); //получаем блок usercard 
+
+let profName = document.createElement('p'); //создаем параграф
+profName.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}
+${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+//выдем имя, "фамилию", через тире username и код языка
+usercard.appendChild(profName); //добавляем 
+
+let userid = document.createElement('p'); //создаем еще параграф 
+userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+usercard.appendChild(userid); //добавляем

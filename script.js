@@ -2,6 +2,9 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
+tg.sendData(tg.version());
+console.log(tg.version());
+tg.sendData(1);
 tg.MainButton.show();
 tg.MainButton.enable();
 

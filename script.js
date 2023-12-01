@@ -2,6 +2,8 @@ let tg = window.Telegram.WebApp; //получаем объект webapp теле
 
 tg.expand(); //расширяем на все окно  
 
+tg.MainButton.show()
+
 tg.MainButton.text = "Сохранить"; //изменяем текст кнопки 
 tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки

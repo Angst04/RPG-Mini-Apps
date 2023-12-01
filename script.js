@@ -11,6 +11,7 @@ tg.MainButton.color = "#143F6B";
 
 tg.ready();
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-	tg.sendData("some string that we need to send"); 
+tg.onEvent('mainButtonClicked', function(){
+	tg.sendData(1); 
+	tg.close();
 });

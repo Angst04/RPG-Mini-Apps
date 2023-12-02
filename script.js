@@ -30,6 +30,11 @@ function outputUpdate(vol) {
    }
 };
 
+const btn = document.getElementById('btn');
+
+element.addEventListener('click', function (event) {
+	tg.showAlert("Была нажата кнопка");
+});
 
 Telegram.WebApp.onEvent('mainButtonClicked', function() {
    let age = document.getElementById("fader").value;

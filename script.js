@@ -2,17 +2,15 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-console.log(tg.version);
 tg.MainButton.show();
-tg.MainButton.enable();
 
 tg.MainButton.text = "Сохранить"; 
-tg.MainButton.textColor = "#F55353"; 
-tg.MainButton.color = "#143F6B"; 
+tg.MainButton.textColor = "#fffb"; 
+tg.MainButton.color = "#123456"; 
 
 tg.ready();
 
-tg.onEvent('mainButtonClicked', function(){
-	tg.sendData(1); 
-	tg.close();
+Telegram.WebApp.onEvent('mainButtonClicked', function() {
+   tg.sendData(1); 
+   tg.close();
 });

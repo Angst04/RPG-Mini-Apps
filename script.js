@@ -35,7 +35,7 @@ const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
 
 btn1.addEventListener('click', () => {
-	tg.showAlert(tg.version);
+	tg.HapticFeedback.impactOccurred(heavy);
 });
 
 btn2.addEventListener('click', () => {

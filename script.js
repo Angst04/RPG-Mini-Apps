@@ -32,8 +32,9 @@ function outputUpdate(vol) {
 
 const btn = document.getElementById('btn1');
 
-element.addEventListener('click', function (event) {
+btn.addEventListener('click', () => {
 	tg.showAlert("Была нажата кнопка");
+	// alert("Отработало не то");
 });
 
 Telegram.WebApp.onEvent('mainButtonClicked', function() {

@@ -1,6 +1,7 @@
 let tg = window.Telegram.WebApp;
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+tg.expand();
 
 let theme = document.getElementById('theme');
 if (prefersDarkMode) {
@@ -39,7 +40,7 @@ btn1.addEventListener('click', () => {
 });
 
 btn2.addEventListener('click', () => {
-	tg.showPopup("Попап");
+	tg.showConfirm("Конфирм");
 });
 
 btn3.addEventListener('click', () => {

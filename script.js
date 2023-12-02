@@ -1,8 +1,6 @@
 let tg = window.Telegram.WebApp;
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-tg.expand();
-
 let theme = document.getElementById('theme');
 if (prefersDarkMode) {
    theme.href = 'dark-mode.css'
@@ -14,11 +12,11 @@ if (prefersDarkMode) {
    tg.MainButton.color = '#cccccc'; 
 };
 
-
 tg.MainButton.show()
 tg.MainButton.text = "Отправить"; 
 
 tg.ready();
+tg.expand();
 
 function outputUpdate(vol) {
    var output = document.querySelector('#volume');

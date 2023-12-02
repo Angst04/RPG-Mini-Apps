@@ -33,7 +33,7 @@ function outputUpdate(vol) {
 const btn = document.getElementById('btn1');
 
 btn.addEventListener('click', () => {
-	tg.showAlert("Была нажата кнопка");
+	tg.showAlert(tg.version);
 	// alert("Отработало не то");
 });
 

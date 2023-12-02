@@ -18,6 +18,8 @@ if (prefersDarkMode) {
 tg.MainButton.show()
 tg.MainButton.text = "Отправить"; 
 
+tg.ready();
+
 
 function outputUpdate(vol) {
    var output = document.querySelector('#volume');

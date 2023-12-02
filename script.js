@@ -10,7 +10,9 @@ tg.MainButton.color = "#123456";
 
 tg.ready();
 
+let age = 37;
+
 Telegram.WebApp.onEvent('mainButtonClicked', function() {
-   tg.sendData(1); 
+   tg.sendData(age); 
    tg.close();
 });

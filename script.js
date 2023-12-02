@@ -30,7 +30,7 @@ function outputUpdate(vol) {
    }
 };
 
-const btn = document.getElementById('btn');
+const btn = document.getElementById('btn1');
 
 element.addEventListener('click', function (event) {
 	tg.showAlert("Была нажата кнопка");

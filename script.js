@@ -20,7 +20,6 @@ tg.MainButton.text = "Отправить";
 
 tg.ready();
 
-
 function outputUpdate(vol) {
    var output = document.querySelector('#volume');
    output.value = vol;
@@ -38,15 +37,17 @@ const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
 
 btn1.addEventListener('click', () => {
-	tg.HapticFeedback.impactOccurred(heavy);
+	tg.sendData("1");
+	tg.close();
 });
 
 btn2.addEventListener('click', () => {
-	tg.showConfirm("Конфирм");
+	tg.sendData("2");
+	tg.close();
 });
 
 btn3.addEventListener('click', () => {
-	tg.setBackgroundColor("#FFFFFF")
+	tg.showConfirm("Конфирм");
 });
 
 Telegram.WebApp.onEvent('mainButtonClicked', function() {

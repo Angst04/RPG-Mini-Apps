@@ -30,11 +30,20 @@ function outputUpdate(vol) {
    }
 };
 
-const btn = document.getElementById('btn1');
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
 
-btn.addEventListener('click', () => {
+btn1.addEventListener('click', () => {
 	tg.showAlert(tg.version);
-	// alert("Отработало не то");
+});
+
+btn2.addEventListener('click', () => {
+	tg.showPopup("Попап");
+});
+
+btn3.addEventListener('click', () => {
+	tg.setBackgroundColor("#FFFFFF")
 });
 
 Telegram.WebApp.onEvent('mainButtonClicked', function() {

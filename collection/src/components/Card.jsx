@@ -13,13 +13,18 @@ const Card = ({ ceilCoordinates }) => {
 
     if (cellIndex !== -1) {
       const { left, top } = ceilCoordinates[cellIndex];
-      controls.start({ x: left, y: top, position: 'absolute', top: '0', left: '0'});
-    }
-    else {
-      controls.start({ position: 'relative'});
+      controls.start({
+        x: left,
+        y: top,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+      });
+    } else {
+      controls.start({ position: 'relative' });
     }
   };
-  
+
   const findCellIndex = (dropX, dropY, coordinates) => {
     for (let i = 0; i < coordinates.length; i++) {
       const { left, right, top, bottom } = coordinates[i];
@@ -32,7 +37,7 @@ const Card = ({ ceilCoordinates }) => {
 
   return (
     <motion.div
-      className='card'
+      className="card"
       drag
       dragSnapToOrigin
       animate={controls}

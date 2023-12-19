@@ -32,7 +32,6 @@ function App() {
         <Card ceilCoordinates={ceilCoordinates} />
         <Card ceilCoordinates={ceilCoordinates} />
         <Card ceilCoordinates={ceilCoordinates} />
-
       </div>
     </div>
   );

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection</title>
+    <link rel="stylesheet" href="dark-mode.css" id="theme">
+</head>
+
+<body>
+    <div class="slider">
+        <output for="fader" id="volume">1</output>
+        <input type="range" id="fader" min="1" max="90" value="1" step="1" oninput="outputUpdate(value)">
+        <h1>ТЕСТ 1</h1>
+        <button id="btn1">Кнопка 1</button>
+        <button id="btn2">Кнопка 2</button>
+        <button id="btn3">Кнопка 3</button>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

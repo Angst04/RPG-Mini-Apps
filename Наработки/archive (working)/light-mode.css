@@ -1,0 +1,96 @@
+/*Обнуление*/
+*{
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+*,*:before,*:after{
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+body {
+   touch-action: none;
+   max-height: 500px;
+   overflow: hidden;
+   font-family: Arial;
+   background: #f2f2f2; 
+   color: #333333;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+   padding: 0;
+}
+
+.slider {
+   transform: translateZ(0);
+   position: relative;
+   color: #333333;
+   border-radius: 8px;
+   width: 120px;
+   height: 12px;
+}
+
+output {
+   transition: .2s ease-out;
+   position: absolute;
+   left: -20px;
+   top: -40px;
+   padding: 7px 10px;
+   background: #dddddd;
+   border-radius: 10px 10px 0 10px;
+   box-shadow: 10px 10px 10px 2px rgba(34, 60, 80, 0.2) inset;
+   color: #333333;
+}
+
+#fader {
+   position: relative;
+   left: 3px;
+   width: 120px;
+   height: 10px;
+   background: #dddddd;
+   -webkit-appearance: none;
+   outline: none;
+   border-radius: 4px;
+   box-shadow: 10px 10px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+#fader::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   background: #cccccc;
+   box-shadow: 0 0 4px #000;
+   transition: background-color 0.3s ease;
+}
+
+#fader::-webkit-slider-thumb:hover {
+   background-color: #aaaaaa;
+}

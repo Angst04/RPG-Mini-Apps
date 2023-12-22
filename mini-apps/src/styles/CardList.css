@@ -1,0 +1,22 @@
+.cardlist {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.card {
+   margin-top: 100px;
+}
+
+.card-title {
+   font-size: 40px;
+}
+
+.card-image {
+   width: 200px;
+   height: 200px;
+}
+
+.card-desc {
+   font-size: 40px;
+}

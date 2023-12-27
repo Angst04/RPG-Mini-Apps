@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const { sequelize } = require('../db');
-
-router.get('/', (req, res) => {
-   res.send('Hello, this is the root route!');
-});
+const sequelize = require('../db');
 
 router.get('/getInventory/:id_tg', async (req, res, next) => {
    try {
-      const id_tg = req.params.id_tg;
-      const [results] = await sequelize.query(
-         `SELECT * FROM inventories WHERE id_tg = :id_tg`,
+      const id_tg = 1006757651;
+
+      // Убрать позже
+      if (isNaN(id_tg)) {
+         return res.status(400).json({ message: 'Invalid id_tg' });
+      }
+
+      const results = await sequelize.query(
+         'SELECT * FROM inventories WHERE id_tg = :id_tg',
          {
-            replacements: { id_tg },
+            replacements: { id_tg: parseInt(id_tg, 10) },
             type: sequelize.QueryTypes.SELECT,
          }
       );
@@ -26,6 +28,8 @@ router.get('/getInventory/:id_tg', async (req, res, next) => {
 
       for (let i = 1; i <= 9; i++) {
          const cardId = inventory[`card_${i}`];
+
+         // Проверяем, что cardId не NaN и не строка '0'
          const card = {
             id: cardId,
             title: `Title for ${cardId}`,
@@ -34,10 +38,10 @@ router.get('/getInventory/:id_tg', async (req, res, next) => {
          };
          cards.push(card);
       }
-
       res.json({ cards });
    } catch (error) {
-      next(error);
+      console.error('Error:', error);
+      res.status(500).json({ message: 'Internal Server Error', error: error.message });
    }
 });
 

@@ -4,9 +4,9 @@ const sequelize = require('../db');
 
 router.get('/getInventory/:id_tg', async (req, res, next) => {
    try {
-      const id_tg = 1006757651;
+      const id_tg = req.params.id_tg;
+      console.log(id_tg)
 
-      // Убрать позже
       if (isNaN(id_tg)) {
          return res.status(400).json({ message: 'Invalid id_tg' });
       }
@@ -29,7 +29,6 @@ router.get('/getInventory/:id_tg', async (req, res, next) => {
       for (let i = 1; i <= 9; i++) {
          const cardId = inventory[`card_${i}`];
 
-         // Проверяем, что cardId не NaN и не строка '0'
          const card = {
             id: cardId,
             title: `Title for ${cardId}`,

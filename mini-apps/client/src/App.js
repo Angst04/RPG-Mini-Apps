@@ -1,12 +1,15 @@
+// App.js
 import React, { useState, useEffect } from 'react';
+import Card from './Card';
+import './styles/App.css'; 
 
-function App() {
+const App = () => {
   const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/getInventory/:1006757651'); // Замените на свой путь
+        const response = await fetch('/api/getInventory/1006757651');
         const data = await response.json();
         setInventory(data.cards);
       } catch (error) {
@@ -14,27 +17,19 @@ function App() {
       }
     };
 
-    // Вызывайте fetchData каждые, например, 5 секунд
-    const intervalId = setInterval(fetchData, 5000);
-
-    // Очистка интервала при размонтировании компонента
-    return () => clearInterval(intervalId);
+    fetchData();
   }, []);
 
   return (
     <div className="App">
       <h1>Inventory</h1>
-      <ul>
+      <div className="card-container">
         {inventory.map((card) => (
-          <li key={card.id}>
-            <img src={card.imagePath} alt={card.title} />
-            <h3>{card.title}</h3>
-            <p>{card.description}</p>
-          </li>
+          <Card key={card.id} card={card} />
         ))}
-      </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -3,25 +3,21 @@
       {
          "id": "c_0001",
          "title": "Огненный удар",
-         "imagePath": "/cards/c_0001.png",
          "description": "Description 1"
       },
       {
          "id": "c_0002",
          "title": "Волк",
-         "imagePath": "/cards/c_0002.png",
          "description": "Description 2"
       },
       {
          "id": "c_0003",
          "title": "Заглушка 1",
-         "imagePath": "/cards/c_0001.png",
          "description": "Description 3"
       },
       {
          "id": "c_0004",
          "title": "Заглушка 2",
-         "imagePath": "/cards/c_0001.png",
          "description": "Description 4"
       }
    ]
